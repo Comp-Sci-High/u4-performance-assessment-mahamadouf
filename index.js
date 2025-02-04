@@ -144,9 +144,9 @@ app.get("/", (request, response) => {
 // })
 
 app.get("/all", (request, response) => {
-  response.render("overview.ejs", trailPosts)
+  response.render("overview.ejs", { trailPosts} )
 })
-
+// https://chatgpt.com/share/67a26d84-16d8-8011-87b7-672b67f6ade2  I used chatGPT to figure out how to grab trailPosts
 app.get("/trail/:num", (request, response) => {
   const searc = request.params.num
   console.log(searc)
