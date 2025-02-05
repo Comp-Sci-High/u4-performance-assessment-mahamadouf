@@ -13,6 +13,7 @@ const trailPosts = [
     distance: 8.5,
     elevationGain: 4200,
     difficultyLevel: "Hard",
+    path: "/trail/0",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Rainier20200906.jpg/640px-Rainier20200906.jpg"
   },
   {
@@ -25,6 +26,7 @@ const trailPosts = [
     distance: 14.2,
     elevationGain: 4800,
     difficultyLevel: "Hard",
+    path: "/trail/1",
     imageUrl: "https://www.yosemite.com/wp-content/uploads/2023/04/panorama-trail-spring.jpg"
   },
   {
@@ -37,6 +39,7 @@ const trailPosts = [
     distance: 10.4,
     elevationGain: 4150,
     difficultyLevel: "Hard",
+    path: "/trail/2",
     imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvJYSdxH4x7CGDPHuf-OrjSTYUFH87ofC-9w&s"
   },
   {
@@ -49,6 +52,7 @@ const trailPosts = [
     distance: 5.4,
     elevationGain: 1500,
     difficultyLevel: "Moderate",
+    path: "/trail/3",
     imageUrl: "https://i0.wp.com/www.parkrecord.com/wp-content/uploads/2022/08/6c5baced-4763-51f0-8925-c71901deb6c0.jpg?fit=1200%2C1666&ssl=1"
   },
   {
@@ -61,6 +65,7 @@ const trailPosts = [
     distance: 22,
     elevationGain: 6100,
     difficultyLevel: "Hard",
+    path: "/trail/4",
     imageUrl: "https://drupal-prod.visitcalifornia.com/sites/default/files/styles/fluid_1920/public/2022-04/VC_Mt-Whitney-gty-512474594_RF_1280x640.jpg.webp?itok=v9OZYjUv"
   },
   {
@@ -73,6 +78,7 @@ const trailPosts = [
     distance: 13.5,
     elevationGain: 4500,
     difficultyLevel: "Hard",
+    path: "/trail/5",
     imageUrl: "https://www.colorado.com/_next/image?url=https%3A%2F%2Fapi.colorado.com%2F%2Fsites%2Fdefault%2Ffiles%2Flegacy_drupal_7_images%2FPikes%2520Peak%2520and%2520Garden%2520of%2520the%2520Gods.jpg&w=3840&q=75"
   },
   {
@@ -85,6 +91,7 @@ const trailPosts = [
     distance: 12,
     elevationGain: 5400,
     difficultyLevel: "Hard",
+    path: "/trail/6",
     imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKtqHsa7LV45iKSfonAeuqWIf8nAugalQi4w&s"
   },
   {
@@ -97,6 +104,7 @@ const trailPosts = [
     distance: 8.2,
     elevationGain: 4000,
     difficultyLevel: "Moderate",
+    path: "/trail/7",
     imageUrl: "https://bostonglobe-prod.cdn.arcpublishing.com/resizer/v2/BBY3LHVPOEI6PM5RAZOYS35A3Y.jpg?auth=abaf5d3991a19b78af6836ec0c064f28b45cf3c0b9e635ff436aacaca6b7c41c&width=1440"
   },
   {
@@ -109,6 +117,7 @@ const trailPosts = [
     distance: 9.5,
     elevationGain: 4700,
     difficultyLevel: "Hard",
+    path: "/trail/8",
     imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSafpWMYfq0mYcuOT6PNhUlkvRRUHkDmzjDQ&s"
   },
   {
@@ -121,6 +130,7 @@ const trailPosts = [
     distance: 7.5,
     elevationGain: 5300,
     difficultyLevel: "Hard",
+    path: "/trail/9",
     imageUrl: "https://static.wixstatic.com/media/35f303_7efe7205cb0f4acabe4456ed8fba6a4c~mv2.jpg/v1/fill/w_640,h_426,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/35f303_7efe7205cb0f4acabe4456ed8fba6a4c~mv2.jpg"
   }
 ];
@@ -139,21 +149,17 @@ app.get("/", (request, response) => {
 })
 
 
-// app.get("/", (request, response) => {
-//   response.render("overview.ejs", inventory[0])
-// })
+
 
 app.get("/all", (request, response) => {
   response.render("overview.ejs", { trailPosts} )
 })
 // https://chatgpt.com/share/67a26d84-16d8-8011-87b7-672b67f6ade2  I used chatGPT to figure out how to grab trailPosts
+
 app.get("/trail/:num", (request, response) => {
   const searc = request.params.num
-  console.log(searc)
-  response.render("post.ejs", trailPosts[searc])
+  response.render("post.ejs", trailPosts[searc]);
 })
-
-
 app.listen(3000, () => {
     console.log("Server running")
   })
