@@ -5,7 +5,7 @@ const app = express()
 const trailPosts = [
   {
     username: "TrailBlazer99",
-    numberOfPeople: 4,
+    numberOfPeople: 0,
     mountainName: "Mount Rainier",
     yearHiked: 2023,
     description: "An unforgettable journey through glaciers and rocky ridges!",
@@ -14,7 +14,7 @@ const trailPosts = [
     elevationGain: 4200,
     difficultyLevel: "Hard",
     path: "/trail/0",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Rainier20200906.jpg/640px-Rainier20200906.jpg"
+    imageUrl: "https://i.redd.it/yl9f0wu0dih71.jpg"
   },
   {
     username: "HikerJohn",
@@ -27,7 +27,7 @@ const trailPosts = [
     elevationGain: 4800,
     difficultyLevel: "Hard",
     path: "/trail/1",
-    imageUrl: "https://www.yosemite.com/wp-content/uploads/2023/04/panorama-trail-spring.jpg"
+    imageUrl: "https://pixelz.cc/wp-content/uploads/2016/11/half-dome-granite-dome-rock-formation-yosemite-national-park-california-united-states-4k-wallpaper.jpg"
   },
   {
     username: "MountainExplorer",
@@ -40,7 +40,7 @@ const trailPosts = [
     elevationGain: 4150,
     difficultyLevel: "Hard",
     path: "/trail/2",
-    imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvJYSdxH4x7CGDPHuf-OrjSTYUFH87ofC-9w&s"
+    imageUrl: "https://www.rickberk.com/images/xl/Sunrise-Mount-Katahdin.jpg"
   },
   {
     username: "NatureLover",
@@ -53,7 +53,7 @@ const trailPosts = [
     elevationGain: 1500,
     difficultyLevel: "Moderate",
     path: "/trail/3",
-    imageUrl: "https://i0.wp.com/www.parkrecord.com/wp-content/uploads/2022/08/6c5baced-4763-51f0-8925-c71901deb6c0.jpg?fit=1200%2C1666&ssl=1"
+    imageUrl: "https://images.unsplash.com/photo-1475351177616-1e5e440dccef?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YW5nZWxzJTIwbGFuZGluZ3xlbnwwfHwwfHx8MA%3D%3D"
   },
   {
     username: "SummitSeeker",
@@ -66,7 +66,7 @@ const trailPosts = [
     elevationGain: 6100,
     difficultyLevel: "Hard",
     path: "/trail/4",
-    imageUrl: "https://drupal-prod.visitcalifornia.com/sites/default/files/styles/fluid_1920/public/2022-04/VC_Mt-Whitney-gty-512474594_RF_1280x640.jpg.webp?itok=v9OZYjUv"
+    imageUrl: "https://plus.unsplash.com/premium_photo-1675315343147-13b3555e21db?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bW91bnQlMjB3aGl0bmV5fGVufDB8fDB8fHww"
   },
   {
     username: "RockyRidge",
@@ -79,7 +79,7 @@ const trailPosts = [
     elevationGain: 4500,
     difficultyLevel: "Hard",
     path: "/trail/5",
-    imageUrl: "https://www.colorado.com/_next/image?url=https%3A%2F%2Fapi.colorado.com%2F%2Fsites%2Fdefault%2Ffiles%2Flegacy_drupal_7_images%2FPikes%2520Peak%2520and%2520Garden%2520of%2520the%2520Gods.jpg&w=3840&q=75"
+    imageUrl: "https://wallpapercat.com/w/full/4/6/b/1555167-2500x1667-desktop-hd-pikes-peak-colorado-background-photo.jpg"
   },
   {
     username: "AdventurousAmy",
@@ -92,8 +92,8 @@ const trailPosts = [
     elevationGain: 5400,
     difficultyLevel: "Hard",
     path: "/trail/6",
-    imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKtqHsa7LV45iKSfonAeuqWIf8nAugalQi4w&s"
-  },
+    imageUrl: "https://4kwallpapers.com/images/wallpapers/grand-teton-national-park-mountain-range-lake-reflections-1920x1080-324.jpg"
+    },
   {
     username: "WildTrailWalker",
     numberOfPeople: 3,
@@ -105,7 +105,7 @@ const trailPosts = [
     elevationGain: 4000,
     difficultyLevel: "Moderate",
     path: "/trail/7",
-    imageUrl: "https://bostonglobe-prod.cdn.arcpublishing.com/resizer/v2/BBY3LHVPOEI6PM5RAZOYS35A3Y.jpg?auth=abaf5d3991a19b78af6836ec0c064f28b45cf3c0b9e635ff436aacaca6b7c41c&width=1440"
+    imageUrl: "https://live.staticflickr.com/4384/37068114632_fabf665e4a_b.jpg"
   },
   {
     username: "PeakHunter",
@@ -118,7 +118,7 @@ const trailPosts = [
     elevationGain: 4700,
     difficultyLevel: "Hard",
     path: "/trail/8",
-    imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSafpWMYfq0mYcuOT6PNhUlkvRRUHkDmzjDQ&s"
+    imageUrl: "https://images.squarespace-cdn.com/content/v1/527eca1de4b0a82a769369f5/51b52b1e-8d1b-42c3-8fc9-74a18c2c1ec3/Mount_Elbert_015.jpg"
   },
   {
     username: "HikingQueen",
@@ -131,10 +131,11 @@ const trailPosts = [
     elevationGain: 5300,
     difficultyLevel: "Hard",
     path: "/trail/9",
-    imageUrl: "https://static.wixstatic.com/media/35f303_7efe7205cb0f4acabe4456ed8fba6a4c~mv2.jpg/v1/fill/w_640,h_426,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/35f303_7efe7205cb0f4acabe4456ed8fba6a4c~mv2.jpg"
+    imageUrl: "https://images.unsplash.com/photo-1502329360980-310a83b3e21d?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bW91bnQlMjBob29kfGVufDB8fDB8fHww"
   }
 ];
 
+// ChatGPT link: https://chatgpt.com/share/67a00efc-6c34-8011-b203-f8312047fd60
 app.set("view engine", "ejs")
 
 app.use((req, res, next) => {
